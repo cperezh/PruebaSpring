@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.carlos.pruebaspringmvc.rest;
+package com.carlos.pruebaspringwebremote.rest;
 
-import com.carlos.pruebaspringservice.entity.Cuenta;
-import com.carlos.pruebaspringservice.service.CuentasService;
-import com.carlos.pruebaspringservice.service.CuentasServiceImpl;
+import com.carlos.pruebaspringserviceremote.entity.CuentaRemote;
+import com.carlos.pruebaspringserviceremote.service.CuentasServiceRemote;
+import com.carlos.pruebaspringserviceremote.service.CuentasServiceRemoteImpl;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -24,11 +24,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 @Path("/cuentasRest")
 public class CuentasRest {
 
-    final private CuentasService cuentasService;
+    final private CuentasServiceRemote cuentasServiceRemote;
 
     public CuentasRest() {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:/conf/applicationContext.xml");
-        cuentasService = context.getBean(CuentasServiceImpl.class);
+        cuentasServiceRemote = context.getBean(CuentasServiceRemoteImpl.class);
     }
 
     /**
@@ -39,9 +39,9 @@ public class CuentasRest {
      */
     @GET
     @Produces("application/json")
-    public Cuenta getJson() {
+    public CuentaRemote getJson() {
 
-        return cuentasService.getCuenta();
+        return cuentasServiceRemote.getCuenta();
     }
 
     /**

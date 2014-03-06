@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package com.carlos.pruebaspringservice.serviceRemote;
+package com.carlos.pruebaspringserviceremote.service;
 
-import com.carlos.pruebaspringservice.entityRemote.CuentaRemote;
+import com.carlos.pruebaspringserviceremote.entity.CuentaRemote;
 import com.carlos.pruebaspringservice.service.CuentasService;
 
 /**

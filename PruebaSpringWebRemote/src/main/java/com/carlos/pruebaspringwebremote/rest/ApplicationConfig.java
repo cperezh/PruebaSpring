@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.carlos.pruebaspringmvc.rest;
+package com.carlos.pruebaspringwebremote.rest;
 
 import java.util.Set;
 import javax.ws.rs.ApplicationPath;
@@ -31,7 +31,7 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(com.carlos.pruebaspringmvc.rest.CuentasRest.class);
+        resources.add(com.carlos.pruebaspringwebremote.rest.CuentasRest.class);
     }
     
 }
