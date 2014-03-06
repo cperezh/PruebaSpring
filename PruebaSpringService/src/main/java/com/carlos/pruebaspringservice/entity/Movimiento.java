@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.carlos.pruebaspringservice.entity;
 
 import java.io.Serializable;
@@ -16,11 +15,18 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-public class Movimiento implements Serializable{
-    
+public class Movimiento implements Serializable {
+
     private String nombre;
-    
-    public Movimiento(String movimiento){
+
+    public Movimiento(String movimiento) {
         this.nombre = movimiento;
+    }
+
+    @Override
+    public Movimiento clone(){
+        Movimiento clon = new Movimiento();
+        clon.nombre = this.nombre;
+        return clon;
     }
 }

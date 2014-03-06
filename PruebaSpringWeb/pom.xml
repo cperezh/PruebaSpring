@@ -8,10 +8,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     
-    <artifactId>PruebaSpringMVC</artifactId>
+    <artifactId>PruebaSpringWeb</artifactId>
     <packaging>war</packaging>
 
-    <name>PruebaSpringMVC</name>
+    <name>PruebaSpringWeb</name>
 
     <dependencies>
         

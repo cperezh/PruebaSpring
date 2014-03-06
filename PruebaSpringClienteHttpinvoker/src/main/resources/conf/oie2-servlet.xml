@@ -17,7 +17,7 @@
     </bean>
     
     <bean id="httpInvokerProxy" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
-        <property name="serviceUrl" value="http://localhost:8084/PruebaSpringMVC/ioi/remoting/cuentas"/>
+        <property name="serviceUrl" value="http://localhost:8081/PruebaSpringWeb/ioi/remoting/cuentas"/>
         <property name="serviceInterface" value="com.carlos.pruebaspringservice.service.CuentasService"/>
     </bean>
           
