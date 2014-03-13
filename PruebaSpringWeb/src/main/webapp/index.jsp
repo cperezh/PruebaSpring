@@ -1,10 +1,9 @@
 <%-- 
-    Document   : carlos
-    Created on : 01-mar-2014, 20:27:00
+    Document   : index
+    Created on : 08-mar-2014, 10:23:27
     Author     : Carlos
 --%>
 
-<%@page import="com.carlos.pruebaspringmvc.controller.CuentasController"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,6 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello ${cuenta.id}</h1>
+        <h1>Hello World!</h1>
+        <a href="./ioi/cuentas/buscarCuenta">Cuentas</a>
+        <a href="./ioi/movimientos/opciones">Movimientos</a>
     </body>
 </html>

@@ -16,8 +16,8 @@ import lombok.NoArgsConstructor;
 public class CuentaRemote extends Cuenta {
 
     public CuentaRemote(final Cuenta cuenta) {
-        this.setNombre(cuenta.getNombre());
-        this.setApellido(cuenta.getApellido());
-        this.setMovimiento(cuenta.getMovimiento());
+        this.setId(cuenta.getId());
+        this.setDescripcion(cuenta.getDescripcion());
+        this.setTitular(cuenta.getTitular());
     }
 }

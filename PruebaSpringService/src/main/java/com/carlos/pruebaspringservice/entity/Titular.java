@@ -15,18 +15,12 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-public class Movimiento implements Serializable {
+public class Titular implements Serializable {
 
     private String nombre;
 
-    public Movimiento(String movimiento) {
-        this.nombre = movimiento;
+    public Titular(String nombreTitular) {
+        this.nombre = nombreTitular;
     }
 
-    @Override
-    public Movimiento clone(){
-        Movimiento clon = new Movimiento();
-        clon.nombre = this.nombre;
-        return clon;
-    }
 }

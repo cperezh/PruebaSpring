@@ -17,7 +17,12 @@ public class CuentasServiceImpl implements CuentasService {
 
     @Override
     public Cuenta getCuenta() {
-        return new Cuenta("Mamencini");
+        return new Cuenta();
+    }
+
+    @Override
+    public void insertarCuenta(Cuenta cuenta) {
+        //cuenta.insertar();
     }
 
 }

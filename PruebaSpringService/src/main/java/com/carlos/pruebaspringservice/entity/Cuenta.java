@@ -6,7 +6,6 @@
 package com.carlos.pruebaspringservice.entity;
 
 import java.io.Serializable;
-import javax.xml.bind.annotation.XmlRootElement;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,25 +15,16 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-@XmlRootElement
 public class Cuenta implements Serializable {
 
-    private String nombre;
-    private String apellido;
-    private Movimiento movimiento;
+    private String id;
+    private String descripcion;
+    private Titular titular;
 
-    public Cuenta(String nombre) {
-        this.nombre = nombre;
-        this.apellido = "perez";
-        movimiento = new Movimiento("movimiento de cuentas");
+    public Cuenta(String id,String descripcion,String nombreTitular) {
+        this.id = id;
+        this.descripcion = descripcion;
+        titular = new Titular(nombreTitular);
     }
 
-    @Override
-    public Cuenta clone(){
-        Cuenta clon = new Cuenta();
-        clon.nombre = this.nombre;
-        clon.apellido = this.apellido;
-        clon.movimiento = this.movimiento.clone();
-        return this;
-    }
 }

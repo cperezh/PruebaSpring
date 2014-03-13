@@ -13,6 +13,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -27,7 +28,9 @@ public class CuentasRest {
     final private CuentasServiceRemote cuentasServiceRemote;
 
     public CuentasRest() {
+
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:/conf/applicationContext.xml");
+
         cuentasServiceRemote = context.getBean(CuentasServiceRemoteImpl.class);
     }
 
@@ -39,8 +42,9 @@ public class CuentasRest {
      */
     @GET
     @Produces("application/json")
-    public CuentaRemote getJson() {
+    public CuentaRemote getCuenta() {
 
+        System.out.println("VOY>>>>>>>>>>>>>>>>>>>>>>>>>");
         return cuentasServiceRemote.getCuenta();
     }
 
@@ -51,6 +55,6 @@ public class CuentasRest {
      */
     @PUT
     @Consumes("application/json")
-    public void putJson(String content) {
+    public void putCuenta(String content) {
     }
 }

@@ -17,5 +17,6 @@
     </bean>
    
     <bean id="CuentasServiceRemoteImpl" class="com.carlos.pruebaspringserviceremote.service.CuentasServiceRemoteImpl"/>
-   
+    
+    
 </beans>

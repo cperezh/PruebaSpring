@@ -14,4 +14,10 @@ import com.carlos.pruebaspringservice.entity.Cuenta;
 public interface CuentasService {
 
     Cuenta getCuenta();
+    
+    /**
+     * Persiste una cuenta
+     * @param cuenta 
+     */
+    void insertarCuenta(Cuenta cuenta);
 }
