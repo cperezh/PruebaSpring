@@ -5,6 +5,7 @@
  */
 package com.carlos.pruebaejbservice;
 
+import com.carlos.pruebaservice.MovimientoService;
 import javax.ejb.Local;
 
 /**

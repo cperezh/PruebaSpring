@@ -5,7 +5,7 @@
  */
 package com.carlos.pruebaejbservice;
 
-import com.carlos.pruebaejbservice.entity.Movimiento;
+import com.carlos.pruebaentity.Movimiento;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

@@ -4,7 +4,7 @@
     <parent>
         <artifactId>PruebaSpring</artifactId>
         <groupId>com.carlos</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.1.0</version>
     </parent>
 
 
@@ -19,6 +19,14 @@
     </properties>
 
     <dependencies>
+        <!-- IOI SERVICE -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>PruebaService</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        
+        <!-- PERSISTENCIA -->
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>eclipselink</artifactId>
@@ -31,6 +39,9 @@
             <version>2.5.1</version>
             <scope>provided</scope>
         </dependency>
+        
+        <!-- PROVIDED -->
+        
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>

@@ -5,8 +5,8 @@
  */
 package com.carlos.pruebaspringmvc.controller;
 
-import com.carlos.pruebaspringservice.entity.Cuenta;
-import com.carlos.pruebaspringservice.service.CuentasService;
+import com.carlos.pruebaentity.Cuenta;
+import com.carlos.pruebaservice.CuentasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;

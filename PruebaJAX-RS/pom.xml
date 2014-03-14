@@ -8,34 +8,19 @@
         <version>0.1.0</version>
     </parent>
 
-  
-    <artifactId>PruebaSpringWebRemote</artifactId>
+    
+    <artifactId>PruebaJAX-RS</artifactId>
     <packaging>war</packaging>
 
-    <name>PruebaSpringWebRemote</name>
-
+    <name>PruebaJAX-RS</name>
+    
     <dependencies>
-        
         <!-- IOI SERVICE -->
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>PruebaSpringService</artifactId>
             <version>${project.version}</version>
         </dependency>
-                
-        <!-- Frameworks -->
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-          
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
-        </dependency>     
         
         <!-- PROVIDED -->
         <dependency>
@@ -45,4 +30,5 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
 </project>

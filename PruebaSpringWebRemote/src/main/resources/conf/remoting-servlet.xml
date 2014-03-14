@@ -12,11 +12,11 @@
     <!-- HTTP SERVICES -->
     
     <bean name="/cuentas" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
-        <property name="service" ref="CuentasServiceRemoteImpl"/>
-        <property name="serviceInterface" value="com.carlos.pruebaspringserviceremote.service.CuentasServiceRemote"/>
+        <property name="service" ref="CuentasServiceImpl"/>
+        <property name="serviceInterface" value="com.carlos.pruebaservice.CuentasService"/>
     </bean>
    
-    <bean id="CuentasServiceRemoteImpl" class="com.carlos.pruebaspringserviceremote.service.CuentasServiceRemoteImpl"/>
+    <bean id="CuentasServiceImpl" class="com.carlos.pruebaspringservice.CuentasServiceImpl"/>
     
     
 </beans>

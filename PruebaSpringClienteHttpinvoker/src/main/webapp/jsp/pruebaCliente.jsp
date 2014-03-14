@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello ${cuentaRemote.descripcion}</h1>
+        <h1>Hello ${cuenta}</h1>
     </body>
 </html>

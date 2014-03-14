@@ -5,8 +5,8 @@
  */
 package com.carlos.pruebaspringmvc.controller;
 
-import com.carlos.pruebaejbservice.MovimientoService;
-import com.carlos.pruebaejbservice.entity.Movimiento;
+import com.carlos.pruebaservice.MovimientoService;
+import com.carlos.pruebaentity.Movimiento;
 import java.util.List;
 import javax.ejb.EJB;
 import org.springframework.stereotype.Controller;
