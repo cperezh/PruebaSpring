@@ -1,10 +1,4 @@
-PruebaSpringClienteHttpinvoker/target/
-PruebaSpringMVC/target/
-PruebaSpringService/target/
-PruebaSpringWeb/target/
-/PruebaSpringServiceRemote/target/
-/PruebaSpringWebRemote/target/
-/PruebaEJBService/target/
-/PruebaService/target/
-/PruebaEntity/target/
-/PruebaJAX-RS/target/
+*.project
+.settings/
+*.classpath
+target/
