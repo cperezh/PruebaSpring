@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  *
  * @author Carlos
+ * Controlador de la familia Cuentas.
  */
 @Controller
 @RequestMapping("/cuentas")

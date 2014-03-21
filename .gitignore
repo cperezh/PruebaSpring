@@ -9,3 +9,7 @@ PruebaSpringWeb/target/
 /PruebaEntity/target/
 /PruebaJAX-RS/target/
 /PipeLineProcessing/target/
+*.project
+.settings/
+*.classpath
+target/
