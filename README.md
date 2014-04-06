@@ -15,8 +15,8 @@ Diferentes ejemplos de aplicaciones Web con tecnología Spring y JEE
 ¡Aún queda mucho por hacer!
 ---------------------------
 * Webservices SOA
-  * Implementar con JAX-WS
-  * Implementar con RESTlet http://restlet.org/
+	* Implementar con RESTlet http://restlet.org/
+	* Ejemplo con AsyncResponse de JAX-RS para ReverseAJAX.
 * Sacar la persistencia del módulo PruebaEJBService.
 * Todo el testing.
 * Probar transaccionalidad

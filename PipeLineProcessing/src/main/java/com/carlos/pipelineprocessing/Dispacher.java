@@ -47,7 +47,7 @@ public class Dispacher{
          for (int i = 0; i < 10; i++) {
              servicio.procesarMensaje(mensaje[i]);
             try {
-                Thread.sleep(5000);
+                Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Dispacher.class.getName()).log(Level.SEVERE, null, ex);
             }

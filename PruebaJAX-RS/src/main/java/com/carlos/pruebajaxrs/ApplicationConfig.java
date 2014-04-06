@@ -32,6 +32,7 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(com.carlos.pruebajaxrs.CuentasRest.class);
+        resources.add(com.carlos.pruebajaxrs.MovimientosRest.class);
     }
     
 }

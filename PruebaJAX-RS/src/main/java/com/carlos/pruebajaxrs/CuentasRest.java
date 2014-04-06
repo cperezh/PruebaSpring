@@ -7,11 +7,9 @@ package com.carlos.pruebajaxrs;
 
 import com.carlos.pruebaentity.Cuenta;
 import com.carlos.pruebaservice.CuentasService;
-import javax.ws.rs.Consumes;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.GET;
-import javax.ws.rs.Produces;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -39,7 +37,6 @@ public class CuentasRest {
      * @return an instance of java.lang.String
      */
     @GET
-    @Produces("application/json")
     public Cuenta getCuenta() {
 
         return cuentasService.getCuenta();
@@ -51,7 +48,6 @@ public class CuentasRest {
      * @param content representation for the resource
      */
     @PUT
-    @Consumes("application/json")
     public void putCuenta(String content) {
     }
 }

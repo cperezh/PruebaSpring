@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/movimientos")
 public class MovimientosController {
 
-    @EJB(mappedName = "java:module/MovimientoServiceImpl!com.carlos.pruebaejbservice.MovimientoServiceLocal")
+    @EJB(lookup = "java:module/MovimientoServiceImpl!com.carlos.pruebaejbservice.MovimientoServiceLocal")
     MovimientoService movimientoService;
 
     @RequestMapping("/opciones")

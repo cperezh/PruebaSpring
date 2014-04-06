@@ -26,6 +26,7 @@ public abstract class JMSWriter {
             context.createProducer().send(queue, mensaje);
             System.out.println("Mensaje a la cola > "+queue.getQueueName()+"|"+mensaje.toString());
         } catch (Exception e) {
+            //TODO: Poner una traza de log
             e.printStackTrace();
         }
     }

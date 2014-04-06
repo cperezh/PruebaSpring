@@ -9,13 +9,13 @@ package com.carlos.pipelineprocessing.service;
 import com.carlos.pipelineprocessing.pipeline.Mensaje;
 import com.carlos.pipelineprocessing.pipeline.Redirector;
 import javax.ejb.EJB;
-import javax.ejb.Stateless;
+import javax.ejb.Stateful;
 
 /**
  *
  * @author Carlos
  */
-@Stateless
+@Stateful
 public class ServicioParallelPipelines  implements Servicio{
 
     @EJB (beanName = "JMSRedirectorInicial")
