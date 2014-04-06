@@ -9,11 +9,13 @@ import java.io.Serializable;
 import javax.jms.ConnectionFactory;
 import javax.jms.JMSContext;
 import javax.jms.Queue;
+import lombok.Data;
 
 /**
  *
  * @author Carlos
  */
+@Data
 public abstract class JMSWriter {
 
     protected ConnectionFactory connectionFactory;

@@ -13,15 +13,17 @@ import lombok.Data;
  */
 @Data
 public abstract class Pipeline {
+    
+    protected Processor processor;
+    
+    protected Redirector redirector;
 
     /**
      * Cuando llega un nuevo mensaje, lo procesa y lo envía al siguiente paso
      *
      * @param mensaje
-     * @param processor
-     * @param redirector
      */
-    public void llegaMensaje(Mensaje mensaje, Processor processor, Redirector redirector) {
+    public void llegaMensaje(Mensaje mensaje) {
         processor.procesar(mensaje);
         redirector.enviarAlPasoSiguiente(mensaje);
     }

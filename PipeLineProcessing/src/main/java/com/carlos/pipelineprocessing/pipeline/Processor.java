@@ -6,13 +6,10 @@
 
 package com.carlos.pipelineprocessing.pipeline;
 
-import javax.ejb.Local;
-
 /**
  *
  * @author Carlos
  */
-@Local
 public interface Processor {
     void procesar(Mensaje mensaje);
   

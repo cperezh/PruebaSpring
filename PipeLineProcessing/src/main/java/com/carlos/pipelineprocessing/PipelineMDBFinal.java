@@ -7,13 +7,9 @@ package com.carlos.pipelineprocessing;
 
 import com.carlos.pipelineprocessing.service.paso2.*;
 import com.carlos.pipelineprocessing.pipeline.Mensaje;
-import com.carlos.pipelineprocessing.pipeline.Pipeline;
-import com.carlos.pipelineprocessing.pipeline.Processor;
-import com.carlos.pipelineprocessing.pipeline.Redirector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.ActivationConfigProperty;
-import javax.ejb.EJB;
 import javax.ejb.MessageDriven;
 import javax.jms.JMSException;
 import javax.jms.Message;
@@ -29,23 +25,20 @@ import javax.jms.MessageListener;
 })
 public class PipelineMDBFinal implements MessageListener {
 
-    @EJB (beanName = "ProcessorPaso2")
-    Processor processor;
-    
-     @Override
+    @Override
     public void onMessage(Message message) {
 
         Mensaje mensaje;
-        
+
         try {
-            
+
             mensaje = message.getBody(Mensaje.class);
-            
-           System.out.println("PROCESADO >>>> " + mensaje.getTexto());
-            
+
+            System.out.println("PROCESADO >>>> " + mensaje.getTexto());
+
         } catch (JMSException ex) {
             Logger.getLogger(PipelineMDBPaso2.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }

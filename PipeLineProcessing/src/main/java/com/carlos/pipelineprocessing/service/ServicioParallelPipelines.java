@@ -8,18 +8,31 @@ package com.carlos.pipelineprocessing.service;
 
 import com.carlos.pipelineprocessing.pipeline.Mensaje;
 import com.carlos.pipelineprocessing.pipeline.Redirector;
+import com.carlos.pipelineprocessing.pipeline.jms.JMSRedirector;
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author Carlos
  */
-@Stateful
+@Stateless
 public class ServicioParallelPipelines  implements Servicio{
-
-    @EJB (beanName = "JMSRedirectorInicial")
+    
     Redirector redirector;
+    
+    @EJB
+    Resources resources;
+
+    @PostConstruct
+    public void postConstruct() {
+        redirector = new JMSRedirector();
+
+        ((JMSRedirector) redirector).setConnectionFactory(resources.getConnectionFactory());
+        ((JMSRedirector) redirector).setQueue(resources.getPaso1InQueue());
+
+    }
 
     @Override
     public void procesarMensaje(Mensaje mensaje) {

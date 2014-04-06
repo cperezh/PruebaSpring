@@ -8,13 +8,11 @@ package com.carlos.pipelineprocessing.service.paso1;
 import com.carlos.pipelineprocessing.pipeline.Mensaje;
 import com.carlos.pipelineprocessing.pipeline.Processor;
 import com.carlos.pipelineprocessing.pipeline.thread.ProcessorConSleep;
-import javax.ejb.Stateless;
 
 /**
  *
  * @author Carlos
  */
-@Stateless
 public class ProcessorPaso1 extends ProcessorConSleep implements Processor {
 
     @Override

@@ -7,10 +7,11 @@ package com.carlos.pipelineprocessing.service.paso2;
 
 import com.carlos.pipelineprocessing.pipeline.Mensaje;
 import com.carlos.pipelineprocessing.pipeline.Pipeline;
-import com.carlos.pipelineprocessing.pipeline.Processor;
-import com.carlos.pipelineprocessing.pipeline.Redirector;
+import com.carlos.pipelineprocessing.pipeline.jms.JMSRedirector;
+import com.carlos.pipelineprocessing.service.Resources;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.PostConstruct;
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.EJB;
 import javax.ejb.MessageDriven;
@@ -28,11 +29,19 @@ import javax.jms.MessageListener;
 })
 public class PipelineMDBPaso2 extends Pipeline implements MessageListener {
 
-    @EJB (beanName = "JMSRedirectorPaso2")
-    Redirector redirector;
+   
+    @EJB
+    Resources resources;
     
-    @EJB (beanName = "ProcessorPaso2")
-    Processor processor;
+    @PostConstruct
+    public void postConstruct() {
+        redirector = new JMSRedirector();
+
+        ((JMSRedirector) redirector).setConnectionFactory(resources.getConnectionFactory());
+        ((JMSRedirector) redirector).setQueue(resources.getPaso3InQueue());
+
+        processor = new ProcessorPaso2();
+    }
     
      @Override
     public void onMessage(Message message) {
@@ -43,7 +52,7 @@ public class PipelineMDBPaso2 extends Pipeline implements MessageListener {
             
             mensaje = message.getBody(Mensaje.class);
             
-            llegaMensaje(mensaje, this.processor, this.redirector);
+            llegaMensaje(mensaje);
             
         } catch (JMSException ex) {
             Logger.getLogger(PipelineMDBPaso2.class.getName()).log(Level.SEVERE, null, ex);

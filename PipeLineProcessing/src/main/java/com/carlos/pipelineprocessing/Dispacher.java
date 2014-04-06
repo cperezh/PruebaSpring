@@ -19,7 +19,7 @@ import javax.ws.rs.Path;
  * @author Carlos
  */
 @Path("/dispacher")
-public class Dispacher{
+public class Dispacher {
 
     @EJB(beanName = "ServicioParallelPipelines")
     Servicio servicio;
@@ -37,28 +37,30 @@ public class Dispacher{
         double tiempoTotal;
         Mensaje[] mensaje;
 
-        mensaje = new Mensaje[10];
+        mensaje = new Mensaje[3];
 
-        for (int i = 0; i < 10; i++) {
-            mensaje[i] = new Mensaje("Inicial "+i);
+        //Inicializo los mensajes de entrada al Dispacher
+        for (int i = 0; i < mensaje.length; i++) {
+            mensaje[i] = new Mensaje("Mensaje " + i);
         }
+
         tiempoInicio = new Date().getTime();
         
-         for (int i = 0; i < 10; i++) {
-             servicio.procesarMensaje(mensaje[i]);
+        //Proceso cada mensaje, esperando un cierto tiempo
+        for (Mensaje mensaje1 : mensaje) {
+            servicio.procesarMensaje(mensaje1);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Dispacher.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-       
+
         tiempoFin = new Date().getTime();
 
         tiempoTotal = (tiempoFin - tiempoInicio) / 1000.0;
         System.out.println("Tiempo en segundos:" + tiempoTotal);
 
-     
     }
 
 }
