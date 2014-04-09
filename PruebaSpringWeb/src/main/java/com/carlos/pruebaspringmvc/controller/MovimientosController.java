@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/movimientos")
 public class MovimientosController {
 
-    @EJB(lookup = "java:module/MovimientoServiceImpl!com.carlos.pruebaejbservice.MovimientoServiceLocal")
+    @EJB(mappedName = "java:module/MovimientoServiceImpl!com.carlos.pruebaejbservice.MovimientoServiceLocal")
     MovimientoService movimientoService;
 
     @RequestMapping("/opciones")
@@ -35,8 +35,10 @@ public class MovimientosController {
     @ResponseBody
     public List<Movimiento> insertarMovimiento(@ModelAttribute Movimiento movimiento) {
 
-        movimientoService.insertar(movimiento);
+    
+            movimientoService.insertar(movimiento);
 
-        return movimientoService.buscarTodos();
+            return movimientoService.buscarTodos();
+      
     }
 }

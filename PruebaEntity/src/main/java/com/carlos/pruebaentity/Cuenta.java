@@ -10,21 +10,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- *
+ * 
  * @author Carlos
  */
 @Data
 @NoArgsConstructor
 public class Cuenta implements Serializable {
 
-    private String id;
-    private String descripcion;
-    private Titular titular;
+	private static final long serialVersionUID = 1L;
 
-    public Cuenta(String id,String descripcion,String nombreTitular) {
-        this.id = id;
-        this.descripcion = descripcion;
-        titular = new Titular(nombreTitular);
-    }
+	private String id;
+	private String descripcion;
+	private Titular titular;
+
+	public Cuenta(String id, String descripcion, String nombreTitular) {
+		this.id = id;
+		this.descripcion = descripcion;
+		titular = new Titular(nombreTitular);
+	}
 
 }

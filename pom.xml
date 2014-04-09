@@ -22,6 +22,8 @@
 		<module>PruebaJAX-WS</module>
 		<module>PruebaClienteJAX-WS</module>
 		<module>PruebaJAX-WS-WAR</module>
+                <module>PruebaDAO</module>
+                <module>PruebaDAO-EJB</module>
 	</modules>
 
 	<properties>

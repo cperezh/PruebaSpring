@@ -5,13 +5,11 @@
  */
 package com.carlos.pruebaejbservice;
 
+import com.carlos.pruebadao.DAOMovimiento;
 import com.carlos.pruebaentity.Movimiento;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaQuery;
 
 /**
  *
@@ -20,30 +18,30 @@ import javax.persistence.criteria.CriteriaQuery;
 @Stateless
 public class MovimientoServiceImpl implements MovimientoServiceLocal {
 
-    @PersistenceContext
-    EntityManager entityManager;
+    @EJB(lookup = "java:module/DAOMovimientoEJBImpl!com.carlos.pruebaejb.dao.DAOMovimientoEJBLocal")
+    DAOMovimiento daoMovimiento;
 
     @Override
     public void insertar(Movimiento movimiento) {
-        entityManager.persist(movimiento);
+
+        movimiento.setId(Long.valueOf(1));
+        daoMovimiento.insertar(movimiento);
+        
+        Movimiento movimiento2 = new Movimiento();
+        movimiento2.setId(Long.valueOf(1));
+        daoMovimiento.insertar(movimiento2);
     }
 
     @Override
     public Movimiento buscar(Long id) {
-        Movimiento movimientoEncontrado;
 
-        movimientoEncontrado = entityManager.find(Movimiento.class, id);
-
-        return movimientoEncontrado;
+        return daoMovimiento.buscar(id);
     }
 
     @Override
     public List<Movimiento> buscarTodos() {
-        CriteriaQuery cq = entityManager.getCriteriaBuilder().createQuery();
-        cq.select(cq.from(Movimiento.class));
-        Query q = entityManager.createQuery(cq);
 
-        return q.getResultList();
+        return daoMovimiento.buscarTodos();
     }
 
 }

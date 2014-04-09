@@ -17,7 +17,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Titular implements Serializable {
 
-    private String nombre;
+  	private static final long serialVersionUID = 1L;
+	
+  	private String nombre;
 
     public Titular(String nombreTitular) {
         this.nombre = nombreTitular;
